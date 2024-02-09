@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import base64,random
+import base64
 import time,datetime
 from pyresparser import ResumeParser
 from pdfminer3.layout import LAParams, LTTextBox
@@ -8,13 +8,14 @@ from pdfminer3.pdfpage import PDFPage
 from pdfminer3.pdfinterp import PDFResourceManager
 from pdfminer3.pdfinterp import PDFPageInterpreter
 from pdfminer3.converter import TextConverter
-import io,random
+import io
 from streamlit_tags import st_tags
 from PIL import Image
 import pymysql
 from Courses import ds_course,web_course,android_course,ios_course,uiux_course,resume_videos,interview_videos
 import pafy
 import plotly.express as px
+import secrets
 
 def fetch_yt_video(link):
     video = pafy.new(link)
@@ -61,7 +62,7 @@ def course_recommender(course_list):
     c = 0
     rec_course = []
     no_of_reco = st.slider('Choose Number of Course Recommendations:', 1, 10, 4)
-    random.shuffle(course_list)
+    secrets.SystemRandom().shuffle(course_list)
     for c_name, c_link in course_list:
         c += 1
         st.markdown(f"({c}) [{c_name}]({c_link})")
@@ -300,14 +301,14 @@ def run():
 
                 ## Resume writing video
                 st.header("**Bonus Video for Resume Writing Tips💡**")
-                resume_vid = random.choice(resume_videos)
+                resume_vid = secrets.SystemRandom().choice(resume_videos)
                 res_vid_title = fetch_yt_video(resume_vid)
                 st.subheader("✅ **"+res_vid_title+"**")
                 st.video(resume_vid)
 
                 ## Interview Preparation Video
                 st.header("**Bonus Video for Interview👨‍💼 Tips💡**")
-                interview_vid = random.choice(interview_videos)
+                interview_vid = secrets.SystemRandom().choice(interview_videos)
                 int_vid_title = fetch_yt_video(interview_vid)
                 st.subheader("✅ **" + int_vid_title + "**")
                 st.video(interview_vid)
