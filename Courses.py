@@ -59,5 +59,4 @@ resume_videos = ['https://youtu.be/y8YH0Qbu5h4','https://youtu.be/J-4Fv8nq1iA',
 
 interview_videos = ['https://youtu.be/Ji46s5BHdr0','https://youtu.be/seVxXHi2YMs',
                     'https://youtu.be/9FgfsLa_SmY','https://youtu.be/2HQmjLu-6RQ',
-                    'https://youtu.be/DQd_AlIvHUw','https://youtu.be/oVVdezJ0e7w'
-                    'https://youtu.be/JZK1MZwUyUU','https://youtu.be/CyXLhHQS3KY']
+                    'https://youtu.be/DQd_AlIvHUw','https://youtu.be/oVVdezJ0e7w','https://youtu.be/JZK1MZwUyUU','https://youtu.be/CyXLhHQS3KY']
